@@ -7,8 +7,8 @@ The practical projects I've done or doing to improve my understanding of data an
   Python: Pandas, Numpy, Matplotlib, Seaborn, jieba, WordCloud  
   PPT
 3. Report:
-  1. Report in PPT:
-  2. Report with Python code (Jupyter notebook based):
+    1. Report in PPT:
+    2. Report with Python code (Jupyter notebook based):
 4. [dataset]  
   Dataset reference: http://insideairbnb.com/get-the-data.html  
 
