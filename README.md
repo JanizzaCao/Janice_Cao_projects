@@ -11,7 +11,7 @@ Table of Contents:
     2. PPT
 3. Report:
     1. Report in PPT:
-    2. Report with Python code (Jupyter notebook based):
+    2. [Report with Python code (Jupyter notebook based)](01_airbnb_beijing/airbnb_beijing_python.ipynb)
 4. [dataset]  
   Dataset reference: http://insideairbnb.com/get-the-data.html  
 
