@@ -10,7 +10,7 @@ Table of Contents:
     1. Python: Pandas, Numpy, Matplotlib, Seaborn, jieba, WordCloud  
     2. PPT
 3. Report:
-    1. [Report in PPT](01_airbnb_beijing/Airbnb Beijing.pptx)
+    1. [Report in PPT](01_airbnb_beijing/Airbnb_Beijing_presentation.pdf)
     2. [Report with Python code (Jupyter notebook based)](01_airbnb_beijing/airbnb_beijing_python.ipynb)
 4. [dataset]  
   Dataset reference: http://insideairbnb.com/get-the-data.html  
