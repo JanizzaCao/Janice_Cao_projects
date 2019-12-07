@@ -1,5 +1,8 @@
 # Janice_Cao_projects
-The practical projects I've done or doing to improve my understanding of data analysis and relevent skills.
+The practical projects I've done or doing to improve my understanding of data analysis and relevent skills.  
+Table of Contents:  
+1. Airbnb Beijing rental data analysis
+2. 
 
 ## Airbnb Beijing rental data analysis
 1. Introduction: Based on the Airbnb Beijing accommodation information list, the report analyses the information that relates to price range, the amount of acommodation, the number of host and reviews.
