@@ -24,3 +24,4 @@ Table of Contents:
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
 ## San Francisco Library Usage
+https://www.kaggle.com/datasf/sf-library-usage-data#Library_Usage.csv
