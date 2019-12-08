@@ -17,11 +17,16 @@ Table of Contents:
   Dataset reference: http://insideairbnb.com/get-the-data.html  
 
 ## Cosmetics Shop eCommerce Events analysis
-1. Introduction: Based on the cosmetics shop eCommerce Event in October 2019, the analysis explains the users' conversion rate from view, add to cart to purchase the products. The report also indicates the PV, UV, ARPPU, ARPU in daily or hourly basis. 
-2. Technical skills used: 
+1. Introduction: Based on the cosmetics shop eCommerce Event in October 2019, the analysis explains the users' conversion rate from view, add to cart to purchase the products. The report also indicates the PV, UV, ARPPU, ARPU in daily or hourly basis.   
+2. Technical skills used:   
 3. Report:  
 4. Dataset:  
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
 ## San Francisco Library Usage
+1. Introduction:  
+2. Technical skills used:  
+3. Report:  
+4. dataset:  
+Update to 2019.09.06: https://data.sfgov.org/Culture-and-Recreation/Library-Usage/qzz6-2jup
 https://www.kaggle.com/datasf/sf-library-usage-data#Library_Usage.csv
