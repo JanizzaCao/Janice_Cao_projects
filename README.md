@@ -3,6 +3,7 @@ The practical projects I've done or doing to improve my understanding of data an
 Table of Contents:  
 1. Airbnb Beijing rental data analysis
 2. Cosmetics Shop eCommerce Events analysis
+3. San Francisco Library Patrons and Collection Usage analysis
 
 ## Airbnb Beijing rental data analysis
 1. Introduction: Based on the Airbnb Beijing accommodation information list, the report analyses the information that relates to price range, the amount of acommodation, the number of host and reviews.
@@ -16,10 +17,10 @@ Table of Contents:
   Dataset reference: http://insideairbnb.com/get-the-data.html  
 
 ## Cosmetics Shop eCommerce Events analysis
-1. Introduction:
+1. Introduction: Based on the cosmetics shop eCommerce Event in October 2019, the analysis explains the users' conversion rate from view, add to cart to purchase the products. The report also indicates the PV, UV, ARPPU, ARPU in daily or hourly basis. 
 2. Technical skills used: 
 3. Report:  
 4. Dataset:  
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
-## Library Usage
+## San Francisco Library Usage
