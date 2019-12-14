@@ -11,8 +11,8 @@ Table of Contents:
     1. Python: Pandas, Numpy, Matplotlib, Seaborn, jieba, WordCloud  
     2. PPT
 3. Report:
-    1. [Report in PPT](01_airbnb_beijing/Airbnb_Beijing_presentation.pdf)
-    2. [Report with Python code (Jupyter notebook based)](01_airbnb_beijing/airbnb_beijing_python.ipynb)
+    1. [Presentation slides](01_airbnb_beijing/Airbnb_Beijing_presentation.pdf)
+    2. [Python code for analysis](01_airbnb_beijing/airbnb_beijing_python.ipynb)
 4. Dataset  
   Dataset reference: http://insideairbnb.com/get-the-data.html  
 
@@ -20,6 +20,8 @@ Table of Contents:
 1. Introduction: Based on the cosmetics shop eCommerce Event in October 2019, the analysis explains the users' conversion rate from view, add to cart to purchase the products. The report also indicates the PV, UV, ARPPU, ARPU in daily or hourly basis.   
 2. Technical skills used:   
 3. Report:  
+        1. Report document:
+        2. [Python code for analysis](02_cosmetic_ecommerce/Cosmetic Ecommerce Shop User Events Analysis.ipynb)
 4. Dataset:  
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
