@@ -29,8 +29,12 @@ The practical projects I've done or doing to improve my understanding of data an
 
 ## San Francisco Library Usage
 1. Introduction: By using the library usage data in San Francisco from 2003 to 2016, the analysis concludes the different readers behaviors and the library patron level from different libraries in the city.  
-2. Technical skills used:  
+2. Technical skills used:
+    1. Python
+    2. Excel
 3. Report:  
+    1. [Report document]
+    2. [Python code for analysis](03_sf_library/SF_library_usage_analysis.ipynb)
 4. dataset:  
 https://data.sfgov.org/Culture-and-Recreation/Library-Usage/qzz6-2jup
 https://www.kaggle.com/datasf/sf-library-usage-data#Library_Usage.csv
