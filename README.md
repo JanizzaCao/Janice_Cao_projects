@@ -17,11 +17,13 @@ Table of Contents:
   Dataset reference: http://insideairbnb.com/get-the-data.html  
 
 ## Cosmetics Shop eCommerce Events analysis
-1. Introduction: Based on the cosmetics shop eCommerce Event in October 2019, the analysis explains the users' conversion rate from view, add to cart to purchase the products. The report also indicates the PV, UV, ARPPU, ARPU in daily or hourly basis.   
-2. Technical skills used:   
+1. Introduction: Based on the cosmetics shop eCommerce Event in October 2019, the analysis providess an overview the users bahavior with multiple indicators. Customer segments is also defined based on RFM model and some short suggestions for future marketing activities is provided.    
+2. Knowledge points:
+    1. Analysis indicators: PV, UV, ARPU, ARPPU, RFM model, conversion rate  
+    2. Technical: Python
 3. Report:  
-        1. Report document:
-        2. [Python code for analysis](02_cosmetic_ecommerce/Cosmetic Ecommerce Shop User Events Analysis.ipynb)
+    1. [Report document](02_cosmetic_ecommerce/Ecommerce events history in cosmetics shop.pdf)  
+    2. [Python code for analysis](02_cosmetic_ecommerce/Cosmetic Ecommerce Shop User Events Analysis.ipynb)
 4. Dataset:  
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
