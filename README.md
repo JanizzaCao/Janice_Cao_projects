@@ -32,5 +32,5 @@ The practical projects I've done or doing to improve my understanding of data an
 2. Technical skills used:  
 3. Report:  
 4. dataset:  
-Update to 2019.09.06: https://data.sfgov.org/Culture-and-Recreation/Library-Usage/qzz6-2jup
+https://data.sfgov.org/Culture-and-Recreation/Library-Usage/qzz6-2jup
 https://www.kaggle.com/datasf/sf-library-usage-data#Library_Usage.csv
