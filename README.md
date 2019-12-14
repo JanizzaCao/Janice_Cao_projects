@@ -22,8 +22,8 @@ Table of Contents:
     1. Analysis indicators: PV, UV, ARPU, ARPPU, RFM model, conversion rate  
     2. Technical: Python
 3. Report:  
-    1. [Report document]("02_cosmetic_ecommerce/Ecommerce events history in cosmetics shop.pdf")  
-    2. [Python code for analysis]("02_cosmetic_ecommerce/Cosmetic Ecommerce Shop User Events Analysis.ipynb")
+    1. [Report document](02_cosmetic_ecommerce/Ecommerce_events_history_in_cosmetics_shop.pdf)  
+    2. [Python code for analysis](02_cosmetic_ecommerce/Cosmetic_Ecommerce_Shop_User_Events_Analysis.ipynb)
 4. Dataset:  
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
