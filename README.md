@@ -28,7 +28,7 @@ The practical projects I've done or doing to improve my understanding of data an
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
 ## San Francisco Library Usage
-1. Introduction: By using the library usage data in San Francisco from 2003 to 2016, the analysis concludes the different readers behaviors and the library patron level from different libraries in the city.  
+1. Introduction: By using the library usage data in San Francisco from 2003 to 2016, the analysis concludes the overview of patron information, checkout and renewal data among different patron types and a short summary about staff information.
 2. Technical skills used:
     1. Python
     2. Excel
