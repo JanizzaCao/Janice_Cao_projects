@@ -3,11 +3,11 @@ The practical projects I've done or doing to improve my understanding of data an
 
 ## Table of Contents  
 1. [Airbnb Beijing rental data analysis](#airbnb)
-2. Cosmetics Shop eCommerce Events analysis
-3. San Francisco Library Patrons and Collection Usage analysis  
-4. Linear programming approach for Fleet assignment problem in an airline company
+2. [Cosmetics Shop eCommerce Events analysis](#cosmetics)  
+3. [San Francisco Library Patrons and Collection Usage analysis](#sf)  
+4. [Linear programming approach for Fleet assignment problem in an airline company](#fleet)  
 
-<h2><span id = "airbnb">Airbnb Beijing rental data analysis</span></h2>  
+## <span id = "airbnb">Airbnb Beijing rental data analysis</span>  
 1. Introduction: Based on the Airbnb Beijing accommodation information list, the report analyses the information that relates to price range, the amount of acommodation, the number of host and reviews.
 2. Technical skills used:  
     1. Python: Pandas, Numpy, Matplotlib, Seaborn, jieba, WordCloud  
@@ -18,7 +18,7 @@ The practical projects I've done or doing to improve my understanding of data an
 4. Dataset  
   Dataset reference: http://insideairbnb.com/get-the-data.html  
 
-## Cosmetics Shop eCommerce Events analysis
+## <span id = "cosmetics">Cosmetics Shop eCommerce Events analysis</span>
 1. Introduction: Based on the cosmetics shop eCommerce Event in October 2019, the analysis providess an overview the users bahavior with multiple indicators. Customer segments is also defined based on RFM model and some short suggestions for future marketing activities is provided.    
 2. Knowledge points:
     1. Analysis indicators: PV, UV, ARPU, ARPPU, RFM model, conversion rate  
@@ -29,7 +29,7 @@ The practical projects I've done or doing to improve my understanding of data an
 4. Dataset:  
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
-## San Francisco Library Usage
+## <span id = "sf">San Francisco Library Usage</span>
 1. Introduction: By using the library usage data in San Francisco from 2003 to 2016, the analysis concludes the overview of patron information, checkout and renewal data among different patron types and a short summary about staff information.
 2. Technical skills used:
     1. Python
@@ -41,5 +41,5 @@ The practical projects I've done or doing to improve my understanding of data an
 https://data.sfgov.org/Culture-and-Recreation/Library-Usage/qzz6-2jup  
 https://www.kaggle.com/datasf/sf-library-usage-data#Library_Usage.csv
 
-## Linear programming approach for Fleet assignment problem in an airline company
+## <span id = "fleet">Linear programming approach for Fleet assignment problem in an airline company</span>
 
