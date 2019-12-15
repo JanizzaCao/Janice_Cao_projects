@@ -5,7 +5,6 @@ The practical projects I've done or doing to improve my understanding of data an
 1. [Airbnb Beijing rental data analysis](#airbnb)
 2. [Cosmetics Shop eCommerce Events analysis](#cosmetics)  
 3. [San Francisco Library Patrons and Collection Usage analysis](#sf)  
-4. [Linear programming approach for Fleet assignment problem in an airline company](#fleet)  
 
 ## <span id = "airbnb">Airbnb Beijing rental data analysis</span>  
 1. Introduction: Based on the Airbnb Beijing accommodation information list, the report analyses the information that relates to price range, the amount of acommodation, the number of host and reviews.
@@ -41,5 +40,4 @@ The practical projects I've done or doing to improve my understanding of data an
 https://data.sfgov.org/Culture-and-Recreation/Library-Usage/qzz6-2jup  
 https://www.kaggle.com/datasf/sf-library-usage-data#Library_Usage.csv
 
-## <span id = "fleet">Linear programming approach for Fleet assignment problem in an airline company</span>
 
