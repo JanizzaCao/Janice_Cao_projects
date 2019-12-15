@@ -2,12 +2,12 @@
 The practical projects I've done or doing to improve my understanding of data analysis and relevent skills.  
 
 ## Table of Contents  
-1. [Airbnb Beijing rental data analysis](##Airbnb Beijing rental data analysis)
+1. [Airbnb Beijing rental data analysis](#airbnb)
 2. Cosmetics Shop eCommerce Events analysis
 3. San Francisco Library Patrons and Collection Usage analysis  
 4. Linear programming approach for Fleet assignment problem in an airline company
 
-## Airbnb Beijing rental data analysis
+<h2><span id = "airbnb">Airbnb Beijing rental data analysis</span></h2>
 1. Introduction: Based on the Airbnb Beijing accommodation information list, the report analyses the information that relates to price range, the amount of acommodation, the number of host and reviews.
 2. Technical skills used:  
     1. Python: Pandas, Numpy, Matplotlib, Seaborn, jieba, WordCloud  
