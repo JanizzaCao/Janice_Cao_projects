@@ -2,7 +2,7 @@
 The practical projects I've done or doing to improve my understanding of data analysis and relevent skills.  
 
 ## Table of Contents  
-1. [Airbnb Beijing rental data analysis](## Airbnb Beijing rental data analysis)
+1. [Airbnb Beijing rental data analysis](##Airbnb Beijing rental data analysis)
 2. Cosmetics Shop eCommerce Events analysis
 3. San Francisco Library Patrons and Collection Usage analysis  
 4. Linear programming approach for Fleet assignment problem in an airline company
