@@ -33,7 +33,7 @@ The practical projects I've done or doing to improve my understanding of data an
     1. Python
     2. Excel
 3. Report:  
-    1. [Report document]
+    1. [Report document](03_sf_library/San_Francisco_Library_Usage_analysis_report.pdf)
     2. [Python code for analysis](03_sf_library/SF_library_usage_analysis.ipynb)
 4. dataset:  
 https://data.sfgov.org/Culture-and-Recreation/Library-Usage/qzz6-2jup
