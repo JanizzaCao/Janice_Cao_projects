@@ -7,7 +7,7 @@ The practical projects I've done or doing to improve my understanding of data an
 3. San Francisco Library Patrons and Collection Usage analysis  
 4. Linear programming approach for Fleet assignment problem in an airline company
 
-<h2><span id = "airbnb">Airbnb Beijing rental data analysis</span></h2>
+<h2><span id = "airbnb">Airbnb Beijing rental data analysis</span></h2>  
 1. Introduction: Based on the Airbnb Beijing accommodation information list, the report analyses the information that relates to price range, the amount of acommodation, the number of host and reviews.
 2. Technical skills used:  
     1. Python: Pandas, Numpy, Matplotlib, Seaborn, jieba, WordCloud  
