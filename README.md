@@ -13,6 +13,7 @@ The practical projects I've done or doing to improve my understanding of data an
 2. Technical skills used:  
     1. Python: Pandas, Numpy, Matplotlib, Seaborn, jieba, WordCloud  
     2. PPT
+    3. Tableau
 3. Report:
     1. [Presentation slides](01_airbnb_beijing/Airbnb_Beijing_presentation.pdf)
     2. [Python code for analysis](01_airbnb_beijing/airbnb_beijing_python.ipynb)
