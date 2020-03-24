@@ -51,7 +51,8 @@ UPDATE:
     2. PPT：自制PPT模板并针对主要数据进行报告
     3. Tableau：根据资料中的经纬度，绘制可交互的地图，展示具体的房源价格、描述，并制作仪表板
 3. 报告:
-    1. [PPT](01_airbnb_beijing/Airbnb_Beijing_presentation.pdf)
+    1. [PPT](01_airbnb_beijing/Airbnb_Beijing_presentation.pdf)  
+    [PPT online (Google端)](https://drive.google.com/open?id=1Ll-_WxqQtc6lezQsmIO94QS7JWmb0dWU)
     2. [Juypter notebook: Python代码与简要分析](01_airbnb_beijing/airbnb_beijing_python.ipynb)
 4. 数据来源：  
   Dataset reference: http://insideairbnb.com/get-the-data.html  
