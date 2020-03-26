@@ -15,21 +15,20 @@
 |2020.03.24| 增加中文说明；添加机器学习与数据分析基础知识的架构|  
 
 ## 目次
-1. 数据分析
-    1. 基础知识（更新中）
-        1. 基础统计
-        2. 概率
-        3. 参数估计
-        4. 假设检验
-    1. 项目
-        1. [Airbnb Beijing rental data analysis](#airbnb2)
-        2. [Cosmetics Shop eCommerce Events analysis](#cosmetics2)  
-        3. [San Francisco Library Patrons and Collection Usage analysis](#sf2)  
-    3. [SQL(更新中)](SQL)
-        1. 知识点
-        2. 练习
-    4. [问题分析](senario_analysis)
-2. [机器学习（更新中）](Machine_learning)
+1. [数据分析统计基础（更新中）](statistical_probability)
+    1. 基础统计
+    2. 概率
+    3. 参数估计
+    4. 假设检验
+2. 数据分析项目实践
+    1. [Airbnb Beijing rental data analysis](#airbnb2)
+    2. [Cosmetics Shop eCommerce Events analysis](#cosmetics2)  
+    3. [San Francisco Library Patrons and Collection Usage analysis](#sf2)  
+3. [数据库(更新中)](SQL)
+    1. SQL知识点
+    2. SQL练习
+4. [业务相关问题分析](senario_analysis)
+5. [机器学习（更新中）](Machine_learning)
 
 ## <span id = "airbnb2">爱彼迎北京房源信息分析</span>  
 1. Introduction: 基于爱彼迎（Airbnb）北京的房源资料，对爱彼迎北京的房源数量、类型、价格分布针对不同区进行了分析比较；对房东的信息，包括拥有多个房源房东的信息进行了分析；根据房源标题，使用jieba库进行分词并绘制词云图。
