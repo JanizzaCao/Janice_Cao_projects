@@ -24,7 +24,7 @@
     3. [SQL(更新中)](SQL)
         1. 知识点
         2. 练习
-    4. 问题分析[senario_analysis]
+    4. [问题分析](senario_analysis)
 2. [机器学习（更新中）](Machine_learning)
 
 ## <span id = "airbnb2">爱彼迎北京房源信息分析</span>  
