@@ -16,10 +16,6 @@
 
 ## 目次
 1. [数据分析统计基础（更新中）](statistical_probability)
-    1. 基础统计
-    2. 概率
-    3. 参数估计
-    4. 假设检验
 2. 数据分析项目实践
     1. [Airbnb Beijing rental data analysis](#airbnb2)
     2. [Cosmetics Shop eCommerce Events analysis](#cosmetics2)  
