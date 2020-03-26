@@ -26,4 +26,33 @@
     GROUP BY user_id;
 ```
 
-3. 
+3. 活动运营数据分析：
+    订单表orders: user_id 用户编号，order_pay 订单金额，order_time 下单时间  
+    活动报名表act_apply: act_id 活动编号，user_id报名用户，act_time报名时间
+    1. 统计每个活动对应所有用户在报名后产生的总订单金额，总订单数（设每个用户限报名1个活动，默认用户报名后产生的订单均为参加活动的订单）
+    ```
+        SELECT a.act_id, SUM(order_pay), COUNT(o.user_id)
+        FROM act_id AS a JOIN orders AS o
+        ON a.user_id = o.user_id
+        WHERE act_time >= order_time
+        GROUP BY 1;
+    ```
+    2. 统计每个活动从开始后到今天平均每天产生的订单数，活动开始时间定义为最早有用户报名的时间（设关于时间数据类型均为datetime）
+    ```
+        SELECT act_id, num/DATEDIFF(NOW(), start_time)
+        FROM (SELECT a.act_id AS act_id, min(a.act_time) AS start_time, count(o.user_id) AS num
+              FROM act_apply AS a JOIN orders AS o
+              ON a.user_id = o.user_id AND o.order_time >= a.act_time
+              GROUP BY act_id);
+    ```
+    ```
+        -- 使用窗口函数MIN()添加最小时间列
+        SELECT a.act_id, COUNT(o.order_time)/DATEDIFF(NOW(), a.begin_time)
+        FROM (SELECT act_id, user_id, act_time, MIN(act_time) OVER
+            (PARTITION BY act_id) AS begin_time FROM act_apply) AS a
+        JOIN (SELECT user_idl, order_time FROM orders) AS o
+        ON a.user_id = o.user_id
+        WHERE a.act_time BETWEEN a.begin_time AND NOW()
+        AND o.order_time > a.act_time
+        GROUP BY a.act_id; 
+    ```
