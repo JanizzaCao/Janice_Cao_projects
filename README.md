@@ -21,6 +21,9 @@
         1. [Airbnb Beijing rental data analysis](#airbnb2)
         2. [Cosmetics Shop eCommerce Events analysis](#cosmetics2)  
         3. [San Francisco Library Patrons and Collection Usage analysis](#sf2)  
+    3. [SQL(更新中)](SQL)
+        1. 知识点
+        2. 练习
 2. [机器学习（更新中）](Machine_learning)
 
 ## <span id = "airbnb2">爱彼迎北京房源信息分析</span>  
