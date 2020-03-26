@@ -38,3 +38,32 @@
     WHERE DATE_SUB(CAST(seven_day AS date), INTERVAL 7 DAY)) = CAST(date AS date);
 ```
 
+4. 表game: 求每个用户结束一场游戏后，平均多久开始下一场游戏，若只玩过一次游戏则不计算
+
+|user_id|start_time|end_time|  
+|:---:|:---:|:---:|  
+|a|2019/01/01 00:00:00|2019/01/01 00:20:00|
+|a|2019/01/01 01:15:00|2019/01/01 01:30:00|
+|a|2019/01/01 02:00:00|2019/01/01 02:15:00
+|b|2019/01/01 01:15:00|2019/01/01 01:30:00|
+
+```
+      SELECT user_id, AVG(gap)
+      FROM (SELECT user_id, TIMEDIFF(next_time, end_time) as gap
+         FROM (SELECT user_id, end_time, lead(start_time, 1) OVER (PARTITION BY user_id ORDER BY end_time) AS next_time
+               FROM game
+               WHERE user_id IN (SELECT user_id FROM game GROUP BY user_id HAVING COUNT(start_time)>1)
+         WHERE next_time IS NOT NULL)
+      GROUP BY user_id; 
+```
+```
+     -- 使用ROW_NUMBER
+     WITH ranked AS(
+         SELECT driver_id, start_time, end_time, ROW_NUMBER() OVER(PARTITION BY driver_id ORDER BY start_time) AS rank FROM game)
+     SELECT driver_id, AVG(time_diff) FROM (
+         SELECT driver_id, TIMEDIFF(r2.start_time, r1.end_time) AS time_diff
+         FROM ranked AS r1 JOIN ranked AS r2
+         ON r1.driver_id = r2.driver_id AND r1.rank = r2.rank-1
+         WHERE r2.rank IS NOT NULL)
+     GROUP BY driver_id;
+```
