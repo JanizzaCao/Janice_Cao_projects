@@ -9,7 +9,7 @@
     GROUP BY date, driver_id
     HAVING count(order_id)>=5 AND SUM(amount)>50;
 ```
-
+  
 2. 表active: 用户在当天活跃后，若在未来第2到30天活跃过，则称为当天的30天内留存用户；输出日期、当日的活跃用户数、30天内留存用户数：
 
 |user_id|date|  
@@ -25,8 +25,8 @@
       ON a.user_id = b.user_id and b.date BETWEEN a.date AND DATE_ADD(a.date, 30)
     GROUP BY user_id;
 ```
-
-3. 活动运营数据分析：
+  
+3. 活动运营数据分析：  
     订单表orders: user_id 用户编号，order_pay 订单金额，order_time 下单时间  
     活动报名表act_apply: act_id 活动编号，user_id报名用户，act_time报名时间
     1. 统计每个活动对应所有用户在报名后产生的总订单金额，总订单数（设每个用户限报名1个活动，默认用户报名后产生的订单均为参加活动的订单）
@@ -55,4 +55,25 @@
         WHERE a.act_time BETWEEN a.begin_time AND NOW()
         AND o.order_time > a.act_time
         GROUP BY a.act_id; 
+    ```
+  
+4. 用户行为分析：  
+    用户行为表tracking_log: user_id用户编号，opr_id操作编号，log_time操作时间  
+    1. 计算每天的访客数和他们的平均操作次数
+    ```
+    SELECT log_date, count(user_id), AVG(times)
+    FROM (SELECT date(log_time) AS log_date, user_id, COUNT(opr_id) AS times
+          FROM tracking_log
+          GROUP BY 1,2)
+    GROUP BY 1;
+    ```
+    2. 统计每天符合以下条件的用户数：A操作后是B操作，AB操作必须相邻
+    ```
+    SELECT date(log_date), count(user_id)
+    FROM (SELECT log_date, user_id, opr_id, LEAD(opr_id, 1) OVER 
+          (PARTITION BY user_id ORDER BY log_time) AS opr_id_2
+          FROM tracking_log
+          WHERE opr_id = "A")
+    WHERE opr_id_2 = "B"
+    GROUP BY date(log_date);
     ```
