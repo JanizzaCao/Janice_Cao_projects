@@ -22,28 +22,6 @@ UPDATE:
         2. [Cosmetics Shop eCommerce Events analysis](#cosmetics2)  
         3. [San Francisco Library Patrons and Collection Usage analysis](#sf2)  
 2. 机器学习（更新中）
-    1. 数据预处理
-        1. 数据清洗
-        2. 特征缩放
-        3. 降维
-    1. 分类算法
-        1. KNN
-        2. 逻辑回归 Logistic Regression
-        3. 决策树
-        4. 随机森林 Random Forest
-        5. SVM
-    2. 聚类算法
-        1. K-Means
-        2. EM
-    3. 关联分析
-        1. Apriori
-    4. 回归
-        1. 简单线性回归
-        2. 多元线性回归
-        3. 多项式回归
-    5. 模型提升
-        1. 交叉验证cross validation
-        2. 网格搜索grid search
 
 ## <span id = "airbnb2">爱彼迎北京房源信息分析</span>  
 1. Introduction: 基于爱彼迎（Airbnb）北京的房源资料，对爱彼迎北京的房源数量、类型、价格分布针对不同区进行了分析比较；对房东的信息，包括拥有多个房源房东的信息进行了分析；根据房源标题，使用jieba库进行分词并绘制词云图。
@@ -69,9 +47,13 @@ UPDATE:
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
 ## <span id = "sf2">旧金山图书馆使用数据分析</span>
-1. 介绍：对旧金山公共图书馆2003年到2016年的42万位读者数据，分析读者信息、馆藏使用与图书馆工作人员异动并撰写英文分析报告
-    1. 数据统计：使用Python对数据进行预处理、分析旧金山公共图书馆总体的读者增长、年龄分布、借阅资料频率差异，对27个分馆的业务进行比较；使用matplotlib与seaborn包配合Excel进行可视化
-    2. 异常分析：辨识异常数据，包括年龄默认值引起的异常、部分读者借阅量过高及数字资料借阅量数据未正确采集的问题
+1. 介绍：对旧金山公共图书馆2003年到2016年的42万位读者数据，使用Python分析读者信息、馆藏使用与图书馆工作人员异动并撰写英文分析报告
+    1. 数据统计：  
+        1. 分析旧金山公共图书馆不同类型的读者增长、年龄分布、借阅资料频率差异，通过matplotlib库绘制条形图、散点图、堆叠柱状图比较  
+        2. 分析27个图书馆分馆的业务差异，通过使用seaborn绘制热力图展示各分馆的读者情况
+    2. 异常分析：通过数据推断读者注册时年龄默认值引起的年龄异常；通过数据分组统计，发现部分读者借阅量过高及数字资料借阅量过低，提出数据采集过程中的可能异常  
+    3. 预测读者类型：通过sklearn对处理分类特征，使用决策树、随机森林算法根据读者年龄、注册馆、活跃日期、居住地情况、通知方式等维度，训练预测读者类型的模型并预测，使用不同树深、不同决策树优化结果  
+    4. 假设检验：使用方差检验、Tukey检验分析不同读者年龄段间的借阅数据差异、来自不同分馆的读者之间的借阅数差异  
 3. 报告:  
     1. [分析报告（Eng Ver.）](03_sf_library/San_Francisco_Library_Usage_analysis_report.pdf)
     2. [Juypter notebook: Python代码与简要分析](03_sf_library/SF_library_usage_analysis.ipynb)
