@@ -96,7 +96,26 @@
     充值表B：userid，money充值金额，date充值时间
     1. 同时查处2016年12月注册的用户在注册30天内的付费人数、付费金额
     ```
+    SELECT date(A.date), COUNT(DISTINCT B.userid) AS pay_num, SUM(B.money) AS total_pay
+    FROM A JOIN B ON A.userid = B.userid AND DATEDIFF(B.date, A.date)<=30
+    WHERE YEAR(A.date)=2016 AND MONTH(A.date)=12
+    GROUP BY 1;
     ```
     2. 查2016年后付费金额<500, ≥500&＜5000，≥5000的付费人数、付费金额
     ```
+    SELECT level, COUNT(DISTINCT userid), SUM(total)
+    FROM (SELECT userid, SUM(money) AS total, CASE WHEN total <500 THEN level1 WHEN total <5000 THEN level2 ELSE level3 END AS level
+         WHERE YEAR(date)>=2016
+         GROUP BY userid)
+    GROUP BY level;
+    ```
+
+7. 以下两表，求2018年1月用户小明提交母婴类“花王”品牌好评率
+    评价表a: id评价编号，create_time创建时间，user_name用户名，goods_id商品编号,sub_time提交时间,set_name评价类型（“好评”、“中评”、“差评”）
+    商品表b: good_id, bu_name类目, brand_name品牌
+    ```
+    SELECT SUM(CASE WHEN a.set_name = "好评" THEN 1 ELSE 0 END)/COUNT(a.id) AS rate
+    FROM a JOIN b ON a.good_id = b.good_id
+    WHERE a.user_name = "小明" AND b.bu_name = "母婴" AND b.brand_name = "花王"
+    AND a.sub_tiem BETWEEN "2018-01-01 00:00:00" AND "2018-01-31 23:59:59"
     ```
