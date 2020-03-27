@@ -72,8 +72,29 @@
     商品表b: sku_id, bu_name类目, brand_name品牌, user_name负责人
     1. 统计小明负责品牌2017年销售最高的三天及对应销售额
     ```
-    
+    CREATE VIEW brand_sale AS(
+      SELECT brand_name, logday, SUM(sale_amt) AS total_sale,
+      FROM a JOIN b ON a.sku_id = b.sku_i
+      WHERE year(a.logday) = 2017 AND b.user_name = "小明"
+      GROUP BY 1,2)
+    SELECT brand_name, logday, sale_amt
+    FROM (SELECT brand_name, logday, total_sale, 
+          ROW_NUMBER() OVER(PARTITION BY brand_name ORDER BY total_sale DESC) AS rank
+          FROM brand_sale)
+    WHERE rank <= 3;
     ```
     2. 统计小明负责品牌2017年连续三天增长>50%的日期及销售额
     ```
+     CREATE VIEW brand_sale AS(
+      SELECT brand_name, logday, SUM(sale_amt) AS total_sale,
+      FROM a JOIN b ON a.sku_id = b.sku_i
+      WHERE year(a.logday) = 2017 AND b.user_name = "小明"
+      GROUP BY 1,2)
+    SELECT brand_name, log_day, s1
+    FROM (SELECT brand_name, logday, total_sale as s1
+          LEAD(total_sale,1) OVER(PARTITION BY brand_name ORDER BY logday) AS s2,
+          LEAD(total_sale, 2) OVER(PARTITION BY brand_name ORDER BY logday) AS s3,
+          LEAD(total_sale, 3) OVER(PARTITION BY brand_name ORDER BY logday) AS s4
+          FROM brand_sale)
+    WHERE s2/s1>1.5 AND s3/s2>1.5 AND s4/s3>1.5;
     ```
