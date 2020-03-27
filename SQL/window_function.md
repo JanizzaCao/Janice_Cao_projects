@@ -67,3 +67,13 @@
          WHERE r2.rank IS NOT NULL)
      GROUP BY driver_id;
 ```
+
+5. 销售表a：logday销售日期, sku_id商品SKU，sale_amt销售额  
+    商品表b: sku_id, bu_name类目, brand_name品牌, user_name负责人
+    1. 统计小明负责品牌2017年销售最高的三天及对应销售额
+    ```
+    
+    ```
+    2. 统计小明负责品牌2017年连续三天增长>50%的日期及销售额
+    ```
+    ```
