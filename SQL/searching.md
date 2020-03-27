@@ -119,3 +119,12 @@
     WHERE a.user_name = "小明" AND b.bu_name = "母婴" AND b.brand_name = "花王"
     AND a.sub_tiem BETWEEN "2018-01-01 00:00:00" AND "2018-01-31 23:59:59"
     ```
+
+8. 成绩表A：student_id, course_name, score
+    若每门课>60不及格，统计每门课及格、不及格人数
+    ```
+    SELECT course_name, SUM(CASE WHEN score<60 THEN 1 ELSE 0 END) AS fail, 
+    SUM(CASE WHEN score>=60 THEN 1 ELSE 0 END) AS pass
+    FROM A
+    GROUP BY course_name;
+    ```
