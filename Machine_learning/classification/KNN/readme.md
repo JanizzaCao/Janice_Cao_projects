@@ -10,7 +10,22 @@
 
 ## 实现
 1. [自实现代码](knn_code.ipynb)
-2. [sklearn.classification.KNeighborsClassifier](knn_sklearn.ipynb)
+2. [sklearn.classification.KNeighborsClassifier](knn_sklearn.ipynb)  
+    ```
+    from sklearn.neighbors import KNeighborsClassifier
+    kNN_classifier = KNeighborsClassifier(n_neighbors=6, weights=”uniform”, algorithm=”auto”, leaf_size, p=1, metric=’minkowski’, metric_params=None, n_jobs=None) weights权重可选distance, 或传入数组；algorithm可选ball_tree, kd_tree, brute; p=1为曼哈顿距离，2为欧几里得距离
+    kNN_classifier.fit(X_train, y_train)
+    y_predict = kNN_classifier.predict(x.reshape(1,-1)) # kNN进行预测predict，需要传入一个矩阵，而不是数组。reshape()成一个二维数组，第一个参数是1表示只有一个数据，第二个参数-1，numpy自动决定第二维度有多少
+    ```
+    |方法|说明|
+    |-|-|
+    |fit(X,y)|X为训练数据，y为分类结果，拟合模型|
+    |get_param(\[deep\])|获取估值器参数|
+    |neighbors(\[X, n_neighbors, return_deistance\])|查找一个或几个点的k个邻居|
+    |kneighbors_graph(\[X,n_neighbors, mode\])|计算在X数组中每个点的k的邻居的（权重）图|
+    |predict(\[X\])|提供数据预测对应的分类|
+    |score(X, y\[, sample_weight\])|返回测试数据、标签的平均准确值|
+    |set_params(\*\*params)|设置估值器参数|
 
 ## 优缺点
 |优点|缺点|
