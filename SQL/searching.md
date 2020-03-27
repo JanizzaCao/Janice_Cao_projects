@@ -77,3 +77,26 @@
     WHERE opr_id_2 = "B"
     GROUP BY date(log_date);
     ```
+
+5. 用户新增留存分析：用户登录表user_log: user_id用户编号, log_time登陆时间
+    求每天新增用户数，第二天、第30天回访比例
+    ```
+    -- 或使用date(new.reg_time) = date(day2.log_time)-1
+    SELECT DATE(new.reg_time) AS day, COUNT(DISTINCT new.user_id) AS new_user,
+    COUNT(DISTINCT day2.user_id) AS day2_stay,
+    COUNT(DISTINCT day30.user_id) AS day30_stay
+    FROM (SELECT user_id, MIN(log_time) AS reg_time FROM user_log
+          GROUP BY user_id) AS new
+    LEFT JOIN user_log AS day2 ON new.user_id = day2.user_id AND DATEDIFF(day2.log_time, new.reg_time) = 1
+    LEFT JOIN user_log AS day30 ON new.user_id = day30.user_id AND DATEDIFF(day30.log_time, new.reg_time) = 29
+    GROUP BY 1; 
+    ```
+
+6. 用户表A：userid， date注册时间
+    充值表B：userid，money充值金额，date充值时间
+    1. 同时查处2016年12月注册的用户在注册30天内的付费人数、付费金额
+    ```
+    ```
+    2. 查2016年后付费金额<500, ≥500&＜5000，≥5000的付费人数、付费金额
+    ```
+    ```
