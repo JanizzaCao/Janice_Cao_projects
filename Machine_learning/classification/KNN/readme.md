@@ -9,7 +9,7 @@
     5. K个邻居例频次最高的类别为测试对象的类别
 
 ## 实现
-1. [自实现代码](knn_code.py)
+1. [自实现代码](knn_code.ipynb)
 2. [sklearn.classification.KNeighborsClassifier](knn_sklearn.ipynb)
 
 ## 优缺点
