@@ -13,9 +13,19 @@
 2. [sklearn.classification.KNeighborsClassifier](knn_sklearn.ipynb)  
     ```
     from sklearn.neighbors import KNeighborsClassifier
-    kNN_classifier = KNeighborsClassifier(n_neighbors=6, weights=”uniform”, algorithm=”auto”, leaf_size, p=1, metric=’minkowski’, metric_params=None, n_jobs=None) weights权重可选distance, 或传入数组；algorithm可选ball_tree, kd_tree, brute; p=1为曼哈顿距离，2为欧几里得距离
+    """
+    weights权重可选distance, 或传入数组；
+    algorithm可选ball_tree, kd_tree, brute; p=1为曼哈顿距离，2为欧几里得距离
+    """
+    kNN_classifier = KNeighborsClassifier(n_neighbors=6, weights=”uniform”,   
+                                          algorithm=”auto”, leaf_size, p=1, metric=’minkowski’,   
+                                          metric_params=None, n_jobs=None) 
     kNN_classifier.fit(X_train, y_train)
-    y_predict = kNN_classifier.predict(x.reshape(1,-1)) # kNN进行预测predict，需要传入一个矩阵，而不是数组。reshape()成一个二维数组，第一个参数是1表示只有一个数据，第二个参数-1，numpy自动决定第二维度有多少
+    """
+    kNN进行预测predict，需要传入一个矩阵，而不是数组。  
+    reshape()成一个二维数组，第一个参数是1表示只有一个数据，第二个参数-1，numpy自动决定第二维度有多少
+    """
+    y_predict = kNN_classifier.predict(x.reshape(1,-1)) 
     ```
     |方法|说明|
     |-|-|
