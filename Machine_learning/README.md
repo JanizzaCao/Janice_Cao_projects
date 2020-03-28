@@ -5,7 +5,7 @@
 # 分类算法 classification
 1. [KNN](classification/KNN)
 2. 逻辑回归 Logistic Regression
-3. 决策树
+3. [决策树 Decision Tree](classification/Deicision_tree)
 4. 随机森林 Random Forest
 5. SVM
 # 聚类算法 clustering
