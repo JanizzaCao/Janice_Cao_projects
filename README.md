@@ -1,4 +1,5 @@
 # Janice Cao Projects
+
     以下为我在向数据科学的发展过程中的一些成果和学习路径，内容在逐步补充中；  
     我希望能从数据分析的工作开始，逐步学习更多的机器学习算法方面的知识并用到真实的工作分析中。  
     我目前在应届毕业求职阶段，希望能有机会获得数据分析相关的工作机会。  
@@ -8,7 +9,8 @@
 
 *部分内容为以前学习过程中整理，当时未记录来源，如有不当请提出，如果之后找到reference会及时补充*
 
-### UPDATE:   
+### UPDATE: 
+
 |日期|内容|
 |:-:|:-|
 |2020.03.27|1. SQL练习题目同步完成 <br> 2. 增加销售额、留存率异动的拆分思路 <br> 3. 添加kNN算法内容|  
@@ -16,6 +18,7 @@
 |2020.03.24|1. 增加中文说明 <br> 2. 添加机器学习与数据分析基础知识的架构|  
 
 ## 目次
+
 1. [数据分析统计基础（更新中）](statistical_probability)
 2. 数据分析项目实践
     1. [Airbnb Beijing rental data analysis](#airbnb2)
@@ -28,6 +31,7 @@
 5. [机器学习（更新中）](Machine_learning)
 
 ## <span id = "airbnb2">爱彼迎北京房源信息分析</span>  
+
 1. Introduction: 基于爱彼迎（Airbnb）北京的房源资料，对爱彼迎北京的房源数量、类型、价格分布针对不同区进行了分析比较；对房东的信息，包括拥有多个房源房东的信息进行了分析；根据房源标题，使用jieba库进行分词并绘制词云图。
 2. 使用技能Technical skills used:  
     1. Python: 使用Pandas, Numpy库对数据进行清洗、分析, 使用Matplotlib, Seaborn库进行数据可视化，包括饼图、换图、直方图、条形图、堆积柱状图, 使用jieba库对房源标题进行分词, 并使用WordCloud绘制词云图  
@@ -41,6 +45,7 @@
   Dataset reference: http://insideairbnb.com/get-the-data.html  
 
 ## <span id = "cosmetics2">巴西美妆电商月度经营状况分析</span>
+
 1. 介绍: 对巴西某美妆电商在2019年10月的410万笔销售数据进行分析，具体包括： 
     1. SQL建库与查询：使用MySQL建立数据库并导入数据，使用Python pymysql库连接数据库查询数据
     2. Python数据清洗、分析：
@@ -59,6 +64,7 @@
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
 ## <span id = "sf2">旧金山图书馆使用数据分析</span>
+
 1. 介绍：对旧金山公共图书馆2003年到2016年的42万位读者数据，使用Python分析读者信息、馆藏使用与图书馆工作人员异动并撰写英文分析报告
     1. 数据统计：  
         1. 分析旧金山公共图书馆不同类型的读者增长、年龄分布、借阅资料频率差异，通过matplotlib库绘制条形图、散点图、堆叠柱状图比较  
@@ -74,9 +80,11 @@ https://data.sfgov.org/Culture-and-Recreation/Library-Usage/qzz6-2jup
 https://www.kaggle.com/datasf/sf-library-usage-data#Library_Usage.csv
 
 # Eng Ver.
+
 The practical projects I've done or doing to improve my understanding of data analysis and relevent skills.  
 
 ## Table of Contents  
+
 1. Data Analysis
     1. [Airbnb Beijing rental data analysis](#airbnb)
     2. [Cosmetics Shop eCommerce Events analysis](#cosmetics)  
