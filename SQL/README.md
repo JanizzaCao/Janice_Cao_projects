@@ -80,8 +80,8 @@ FROM table|view
         3. 与ALL运算符
         4. 与EXISTS, NOT EXISTS
     4. 使用WITH AS
-5. 联结JOIN
-![JOIN](pics/join.jfif)
+5. 联结JOIN  
+    <img src="pics/join.jfif" width="50%" align="middle">
     1. INNER JOIN
     2. LEFT JOIN
     3. RIGHT JOIN
