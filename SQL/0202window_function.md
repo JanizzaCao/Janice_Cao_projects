@@ -98,3 +98,39 @@
           FROM brand_sale)
     WHERE s2/s1>1.5 AND s3/s2>1.5 AND s4/s3>1.5;
     ```
+
+6. 用户签到表user_att: date日期，user_id用户编号, is_sign_in是否签到（0否1是）
+    1. 计算截止今天每个用户已经连续签到的天数：输出当天签到的所有用户、签到天数
+    ```
+    -- 先判定用户今天是否签到再计算
+    SELECT user_id, DATEDIFF(NOW(), nearest_not) AS signin_times
+    FROM
+       (SELECT user_id, MAX(date) as nearest_not
+       FROM user_att
+       WHERE user_id IN (SELECT user_id FROM user_att 
+                         WHERE date = CURDATE() AND is_sign_in = 1)
+       AND is_sign_in = 0
+       GROUP BY user_id);
+    ```
+    ```
+    -- 使用signin_times>0筛选今天没有签到的用户
+    SELECT user_id, DATEDIFF(NOW(), nearest_not) AS signin_times
+    FROM
+       (SELECT user_id, MAX(date) as nearest_not
+       FROM user_att
+       WHERE is_sign_in = 0
+       GROUP BY user_id)
+    WHERE signin_times > 0;
+    ```
+    2. 计算每个用户历史最大连续签到天数：输出所有出现过的用户，其最大连续签到天数
+    ```
+    -- 使用mysql变量
+    SELECT user_id, MAX(signin_continue)
+    FROM (SELECT user_id, 
+         @num: = IF(is_sign_in=1 and @user_id=user_id, @num+1, 1) AS signin_continue, --判断如果签到且是上一笔相同的用户，则连续签到日加1，否则重置为1
+         @user_id:=user_id --获取本笔记录的用户id
+         FROM user_att, (SELECT @num:=0, @user_id:=null) temp
+         ORDER BY user_id, date)
+    GROUP BY user_id; --选出每个用户最大的连续签到日
+    ```
+    注：题目来源：https://mp.weixin.qq.com/s/dfzfC__vk4ESzOjOBJG3-w 原答案第一问似乎没有筛选掉当天未签到的用户；原答案第二问使用Oracel WM_CONCAT()函数，此处使用mySql变量解决
