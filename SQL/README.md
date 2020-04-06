@@ -35,7 +35,8 @@
 
 1. [基础查询练习](0201searching.md)
 2. [窗口函数查询](0202window_function.md)
-3. DDL、DML语句练习
+3. [通用型查询问题](0203general_query.md)
+4. DDL、DML语句练习
 
 ---
 ---
