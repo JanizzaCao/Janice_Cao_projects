@@ -11,6 +11,11 @@
 
 ## 指定数值计算
 1. 取众数、四分位数、中位数
+    1. 众数
+    2. 四分位数
+    3. 中位数：表orders: order_id, mall_id, goods_id, sale_number, amount 求每个商店的商品价格中位数  
+    ```
+    ```
 2. 随机选择1%的id
 3. Null值存在对计算的影响
 
