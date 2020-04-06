@@ -134,3 +134,41 @@
     GROUP BY user_id; --选出每个用户最大的连续签到日
     ```
     注：题目来源：https://mp.weixin.qq.com/s/dfzfC__vk4ESzOjOBJG3-w 原答案第一问似乎没有筛选掉当天未签到的用户；原答案第二问使用Oracel WM_CONCAT()函数，此处使用mySql变量解决
+
+7. 表grade: sname学生名, score分数, cid科目, 求出所有科目都>80分的学生名
+   ```
+   SELECT sname FROM (
+      SELECT sname, MIN(score) OVER (PARTITION BY sname) AS min_score
+      FROM grade)
+   WHERE min_score > 80;
+   ```
+
+8. 表orders: uid, start_time, end_time  
+   取出开始时间、结束时间间隔差5分钟uid，取出第二个订单的uid  
+
+9. 表s: uid学号, cname课程名, score课程成绩  
+    1. 求有两门课成绩<60的学生学号，及其所有课平均成绩在整体平均的排名  
+    ```
+    ```
+    2. 求所有人在"k"课程的成绩排名  
+    ```
+    ```
+
+10. 订单表orders: userid, cost下单金额，brand购买品牌，goods商品名称, time下单时间   
+   求最近30天用户消费金额的排名并给出该用户购买了多少种品牌的产品（品牌数不是商品数）
+    ```
+    ```
+
+11. 表user_log: uid, log_page 登陆页编码, log_time登陆时间  
+    找出所有的登陆过A、...B、...(非C)...D的用户，就是先登陆A网页，之后登陆B网页，之间可以登陆其他所有网页，再登陆D网页，B和D网页之间可以登陆任何非C网页的其他网页  
+    思路：用left join，先找出用户A的时间，然后left join到所有A之后的B，再找到所有B之后的D，根据此表，对应一个C网页的时间表，只要用户C网页时间在任意B和D之间没有就输出。  
+    ```
+    
+    ```
+
+12. 表orders: oid, uid, time  
+    统计每周都有购买的uid数量  
+    思路：使用CASE WHEN记录当周购买为1，未购买为0，相加>4
+    ```
+    
+    ```
