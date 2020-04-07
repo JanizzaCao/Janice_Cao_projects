@@ -88,8 +88,8 @@ FROM table|view
         2. LEFT JOIN
         3. RIGHT JOIN
         4. FULL OUTER JOIN
-        5. CROSS JOIN
-            <img src="pics/join.jfif" width="40%" align="middle">
+        5. CROSS JOIN  
+            <img src="pics/join.jfif" width="50%" align="middle">
     2. JOIN条件在ON和WHERE的区别
     3. LEFT JOIN配对条件的执行顺序
 6. 高级查询运算词
