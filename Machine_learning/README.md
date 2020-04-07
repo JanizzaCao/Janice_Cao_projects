@@ -8,6 +8,7 @@
 3. [决策树 Decision Tree](classification/Deicision_tree)
 4. 随机森林 Random Forest
 5. SVM
+6. 朴素贝叶斯
 # 聚类算法 clustering
 1. K-Means
 2. EM
