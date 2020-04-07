@@ -18,7 +18,7 @@
 1. SQL执行顺序
 2. 列转行&行转列
 3. TopN问题
-5. JOIN 
+5. JOIN：
 6. 日期数据相关函数
 ### [DML, DDL, DCL](0122dml_ddl_dcl.md)
 
@@ -27,9 +27,10 @@
 ### [其他](0123other_keypoints.md)
 
 1. 查询优化
-2. 窗口函数
+2. 窗口函数：使用、实现原理
 3. Null相关知识点
 4. MySQL引擎区别
+5. 索引相关：索引的作用、主键外键作用
 
 # Part 2 练习
 
@@ -82,14 +83,17 @@ FROM table|view
         4. 与EXISTS, NOT EXISTS
     4. 使用WITH AS
 5. 联结JOIN  
-    <img src="pics/join.jfif" width="50%" align="middle">
-    1. INNER JOIN
-    2. LEFT JOIN
-    3. RIGHT JOIN
-    4. FULL OUTER JOIN
-    5. CROSS JOIN
-
+    1. 各种JOIN使用场景
+        1. INNER JOIN
+        2. LEFT JOIN
+        3. RIGHT JOIN
+        4. FULL OUTER JOIN
+        5. CROSS JOIN
+            <img src="pics/join.jfif" width="40%" align="middle">
+    2. JOIN条件在ON和WHERE的区别
+    3. LEFT JOIN配对条件的执行顺序
 6. 高级查询运算词
+
 ### <span id = "sql_dml">数据操作语言DMLL</span>
 
 ### <span id = "sql_ddl">数据定义语言DDL</span>
