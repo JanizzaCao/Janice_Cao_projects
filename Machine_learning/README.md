@@ -2,7 +2,7 @@
 1. 数据清洗
 2. 特征缩放
 3. 降维
-# 分类算法 classification
+# [分类算法 classification](classification/README.md)
 1. [KNN](classification/KNN)
 2. 逻辑回归 Logistic Regression
 3. [决策树 Decision Tree](classification/Deicision_tree)
