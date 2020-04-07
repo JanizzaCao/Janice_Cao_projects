@@ -14,16 +14,16 @@
 ## 1.2 高频知识点
 
 ### [DQL](0121DQL.md)
-
 1. SQL执行顺序
 2. 列转行&行转列
 3. TopN问题
 5. JOIN：
 6. 日期数据相关函数
-### [DML, DDL, DCL](0122dml_ddl_dcl.md)
 
+### [DML, DDL, DCL](0122dml_ddl_dcl.md)
 1. Delete, truncate, drop区别
 2. SQL数据类型
+
 ### [其他](0123other_keypoints.md)
 
 1. 查询优化
@@ -33,7 +33,6 @@
 5. 索引相关：索引的作用、主键外键作用
 
 # Part 2 练习
-
 1. [基础查询练习](0201searching.md)
 2. [窗口函数查询](0202window_function.md)
 3. [通用型查询问题](0203general_query.md)
@@ -74,14 +73,39 @@ FROM table|view
             ELSE 显示内容3
             END AS 显示列名
 4. 子查询
-    1. 独立子查询
-    2. 相关子查询
+    1. 独立子查询：独立运行，与外层无联系
+    ```
+    SELECT order_id, customer_id FROM sales.orders
+    WHERE customer_id IN (SELECT customer_id FROM sales.customers WHERE city = "New York")
+    ```
+    2. 相关子查询：使用父查询结果；父查询执行一次，子查询才执行一次
+    ```
+    -- 引用o表的o.order_id结果
+    SELECT order_id, (SELECT MAX(list_price) FROM sales_order_item AS i
+                      WHERE i.order_id = o.order_id) AS max_list_price
+    FROM sales_orders AS o;
+    ```
     3. 子查询常见搭配
-        1. 与IN运算符：
-        2. 与ANY运算符：
-        3. 与ALL运算符
-        4. 与EXISTS, NOT EXISTS
+        1. 与IN运算符：子查询返回一个或多个值
+        ```
+        -- 查2017年有购买的顾客
+        SELECT name FROM customers AS c
+        WHERE c.cid IN (SELECT cid FROM orders WHERE YEAR(order_date)=2017);
+        ```
+        2. 与ANY运算符：>ANY() 大于任何一个子查询则为True
+        3. 与ALL运算符：>ALL() 大于子查询所有结果则为True
+        4. 与EXISTS, NOT EXISTS：代替IN提高速度
+        ```
+        -- 同IN例的查询目的：查2017年有购买的顾客
+        SELECT name FROM customers AS c
+        WHERE EXISTS (SELECT cid from orders AS o
+                      WHERE o.cid = c.cid AND YEAR(order_date)=2017);
+        ```
     4. 使用WITH AS
+    ```
+    WITH new_name AS (SELECT col FROM tb_a)
+    SELECT a.col FROM tb_a AS a JOIN table_b ON ...
+    ```
 5. 联结JOIN  
     1. 各种JOIN使用场景
         1. INNER JOIN
@@ -92,11 +116,40 @@ FROM table|view
             <img src="pics/join.jfif" width="50%" align="middle">
     2. JOIN条件在ON和WHERE的区别
     3. LEFT JOIN配对条件的执行顺序
-6. 高级查询运算词
+6. 高级查询运算词: 含ALL为不消除结果的重复行
+    1. UNION, UNION ALL
+    2. EXCEPT, EXCEPT ALL
+    3. INTERSECT, INTERSECT ALL
 
 ### <span id = "sql_dml">数据操作语言DMLL</span>
+1. 插入
+    1. 基本语句：INSERT INTO table_a(col1, col2, ...) VALUES(...) (...)
+    2. 从另一表导入:  
+    t2存在：INSERT INTO t2(col1, col2, ...) SELECT col1, col2, .. FROM t1
+    t2不存在：SELECT col1, col2, ... INTO t2 FROM t1
+    3. MySQL
+        1. 插入若不存在：INSERT IGNORE INTO table_a VALUES(....)
+        2. 创建时从另一张表插入：CREATE TABLE table_a SELECT col1, col2, ... FROM table_b
+2. 更新
+    1. 基本语句：UPDATE table_a SET col1 = value1 WHERE ...
+    2. 使用另一张表更新：  
+    UPDATE table_a SET table_a.col1 = table_b.col1 FROM table_a, table_b WHERE table_a.id = table_b.id
+3. 删除：DELETE FROM table_a WHERE ...
 
 ### <span id = "sql_ddl">数据定义语言DDL</span>
+1. 创建
+
+2. 修改表
+
+3. 删除表
 
 ### <span id = "sql_function">常用函数</span>
+1. 聚合函数
+
+2. 时间函数
+
+3. 数据清洗
+
+
+
 
