@@ -1,6 +1,6 @@
 # 
 
-## 函数用法
+## 1 函数用法
 ### 时间函数
 1. Timestamp, datetime之间转化:
     1. 基于Mysql:   
@@ -12,27 +12,35 @@
     %Y4位年，%y2位年；%d日期数字，%m月数字，%c月数字不补零；  
     %j 一年中天数  
     %H 小时（24制） %h小时（12制）%S秒 %p AM或PM %U年中第几周  
-2. date_sub, date_add计算  
-3. DATEDIFF()  
-4. day(), month(), year()取事件中日、月、年  
+2. DATE_ADD(date, INTERVAl n DAY): n可以为负数
+    DATE_SUB()  
+3. DATEDIFF(date1, date2), TIMEDIFF(time1, time2)  
+4. day(), month(), year() 取事件中日、月、年  
 5. Mysql: NOW() 当前日期和时间，CURDATE() CURTIME() 当前日期、时间；DATE() 获取日期部分
 
 ### 字符串函数（基于Mysql）
 1. Concat函数:   
     CONCAT("1", "+2") 拼接    
     CONCAT_WS(separator, str1, str2) 根据连接符连接字符串  
-2. 字符串截取函数：  
+2. 字符串截取函数：
+    LEFT(col, 1), RIGHT(), MID
     SUBSTR(str, start_pos, len)截取返回  
     TRIM()  
     LTRIM(str), RTIRM(str) 去空格  
     REPLACE(str, from_str, to_str)  
 3. 长度：LENGTH() CHAR_LENGTH  
 4. LOWER(str), UPPER(str)  
+5. 查找：LOCATE("k", col) 返回第一个k的位置
+
+### 聚合函数
+1. MAX(), MIN(), SUM(), AVG()  
+    ROUND(data, 小数位数)
+2. COUNT(): COUNT(*) 统计含null，COUNT(1), COUNT(DISTINCT col1) 不含null
 
 ### CAST(col AS type) 转换类型
     类型可以为：BINARY, CHAR[(N)], DATE, DATETIME, DECIMAL, TIME, SIGNED有符号int型, UNSIGNED无符号int型
 
-## 指定数值计算
+## 2 指定数值计算
 1. 取众数、四分位数、中位数
     1. 众数  
     思路：使用group by + having=max()
