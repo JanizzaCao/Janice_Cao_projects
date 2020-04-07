@@ -3,6 +3,9 @@
 ## 1.1 数据库基础
 
 ### [基础概念](#db_basic)
+1. 数据库索引原理、内外键
+2. 事务与ACID属性
+3. SQL数据类型
 
 ### SQL语句
 
@@ -10,6 +13,7 @@
 2. [数据操作语言DML](#sql_dml)
 3. [数据定义语言DDL](#sql_ddl)
 4. [常用函数](#sql_function)
+5. [视图、存储过程](#view_procedure)
 
 ## 1.2 高频知识点
 
@@ -121,7 +125,7 @@ FROM table|view
     2. EXCEPT, EXCEPT ALL
     3. INTERSECT, INTERSECT ALL
 
-### <span id = "sql_dml">数据操作语言DMLL</span>
+### <span id = "sql_dml">数据操作语言DML</span>
 1. 插入
     1. 基本语句：INSERT INTO table_a(col1, col2, ...) VALUES(...) (...)
     2. 从另一表导入:  
@@ -149,6 +153,8 @@ FROM table|view
 2. 时间函数
 
 3. 数据清洗
+
+### <span id = "view_procedure">视图、存储过程</span>
 
 ## 高频知识点
 ### <span id = "02DQL">DQL</span>
