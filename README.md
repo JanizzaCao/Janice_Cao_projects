@@ -13,9 +13,9 @@
 
 1. [数据分析统计基础（更新中）](statistical_probability)
 2. 数据分析项目实践
-    1. [Airbnb Beijing rental data analysis](#airbnb2)
-    2. [Cosmetics Shop eCommerce Events analysis](#cosmetics2)  
-    3. [San Francisco Library Patrons and Collection Usage analysis](#sf2)  
+    1. [爱彼迎北京房源信息分析 Airbnb Beijing rental data analysis](#airbnb2)
+    2. [美妆电商用户行为分析 Cosmetics Shop eCommerce Events analysis](#cosmetics2)  
+    3. [旧金山图书馆使用数据分析 San Francisco Library Patrons and Collection Usage analysis](#sf2)  
 3. [数据库(更新中)](SQL)
     1. SQL知识点
     2. SQL练习
@@ -50,7 +50,7 @@
 4. 数据来源：  
   Dataset reference: http://insideairbnb.com/get-the-data.html  
 
-## <span id = "cosmetics2">巴西美妆电商月度经营状况分析</span>
+## <span id = "cosmetics2">美妆电商用户行为分析</span>
 
 1. 介绍: 对巴西某美妆电商在2019年10月的410万笔销售数据进行分析，具体包括： 
     1. SQL建库与查询：使用MySQL建立数据库并导入数据，使用Python pymysql库连接数据库查询数据
