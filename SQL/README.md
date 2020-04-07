@@ -151,10 +151,41 @@ FROM table|view
 
 ### <span id = "sql_ddl">数据定义语言DDL</span>
 1. 创建
-
+    1. 创建库：CREATE DATABASE db_name;
+    2. 创建表：
+    ```
+    CREATE TABLE [IF NOT EXISTS] tb_name(
+                  id INT IDENTITY(1,1) PRIMARY KEY,
+                  name VARCHAR(10) UNIQUE NOT NULL,
+                  num INT CHECK(num BETWEEN 12 AND 20),
+                  note VARCHAR(20) DEFAULT "NA")
+    ```
+    3. 用已有表创建表：
+    ```
+    -- Method 1
+    CREATE TABLE t2 LIKE t1;
+    -- Method 2
+    CREATE TABLE t2 AS SELECT col1, col2, ... FROM t1 DEFINITION ONLY;
+    ```
 2. 修改表
-
-3. 删除表
+    1. 修改列
+    ```
+    ALTER TABLE t1 ADD COLUMN new_col VARCAHR(20);
+    ALTER TABLE t1 DROP COLUMN col_name [CASCADE|RESTRICT]; --cascade视图等一起删除、restrict没有视图约束才能删除
+    ALTER TABLE t1 MODIFY col_name VARCHART(20);
+    ```
+    2. 对已有表创建索引：索引不可以修改，更改要先删除再创建
+    ```
+    CREATE UNIQUE INDEX index_name ON table_a(col1);
+    CREATE INDEX index_name ON table_a(col1);
+    DROP INDEX index_name;
+    ```
+    3. 主键
+    ```
+    ALTER TABLE t1 ADD PRIMARY KEY(col_name);
+    ALTER TABLE t2 DROP PRIMARY KEY(col_name);
+    ```
+3. 删除表：DROP TABLE table_name [CASCADE|RESTRICT];
 
 ### [常用函数](0203general_query.md)
 1. 聚合函数
@@ -173,6 +204,17 @@ FROM table|view
 
 ### <span id = "02dml_ddl_dcl">DML, DDL, DCL</span>
 1. Delete, truncate, drop区别
+    1. DROP table_a 不再需要该表时使用，删除表，DDL语言
+    2. DELETE: DML语言，慢，搭配where使用较灵活；  
+       TRUNCATE：DDL语句，快，可理解为先DROP再CREATE  
+       ||TRUNCATE|DELETE|
+       |:-:|:-:|:-:|
+       |回滚rollback|DDL语句，无回滚|DML语言，执行完可回滚|
+       |返回值|0|被删除的行数
+       |InnoDB支持一个表一个文件，此时|一次性删除，不激活触发器<br>快|一行一行删除，激活触发器<br>慢|
+       |日志|不记录|记录|
+       |有列为其他表外键时|失败|成功|
+       |有自增列时|计数复原|计数继续|
 2. SQL数据类型
 
 ### <span id = "02other_keypoints">其他</span>
