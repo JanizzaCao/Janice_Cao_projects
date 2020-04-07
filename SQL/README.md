@@ -13,18 +13,18 @@
 
 ## 1.2 高频知识点
 
-### [DQL](0121DQL.md)
+### [DQL](#02DQL)
 1. SQL执行顺序
 2. 列转行&行转列
 3. TopN问题
 5. JOIN：
 6. 日期数据相关函数
 
-### [DML, DDL, DCL](0122dml_ddl_dcl.md)
+### [DML, DDL, DCL](#02dml_ddl_dcl)
 1. Delete, truncate, drop区别
 2. SQL数据类型
 
-### [其他](0123other_keypoints.md)
+### [其他](#02other_keypoints)
 
 1. 查询优化
 2. 窗口函数：使用、实现原理
@@ -150,6 +150,21 @@ FROM table|view
 
 3. 数据清洗
 
+## 高频知识点
+### <span id = "02DQL">DQL</span>
+1. SQL执行顺序
+2. 列转行&行转列
+3. TopN问题
+5. JOIN
+6. 日期数据相关函数
 
+### <span id = "02dml_ddl_dcl">DML, DDL, DCL</span>
+1. Delete, truncate, drop区别
+2. SQL数据类型
 
-
+### <span id = "02other_keypoints">其他</span>
+1. 查询优化
+2. 窗口函数：使用、实现原理
+3. Null相关知识点
+4. MySQL引擎区别
+5. 索引相关：索引的作用、主键外键作用
