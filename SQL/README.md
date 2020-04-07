@@ -12,7 +12,7 @@
 1. [数据查询语言DQL](#sql_dql)
 2. [数据操作语言DML](#sql_dml)
 3. [数据定义语言DDL](#sql_ddl)
-4. [常用函数](#sql_function)
+4. [常用函数](0203general_query.md)
 5. [视图、存储过程](#view_procedure)
 
 ## 1.2 高频知识点
@@ -147,11 +147,9 @@ FROM table|view
 
 3. 删除表
 
-### <span id = "sql_function">常用函数</span>
+### [常用函数](0203general_query.md)
 1. 聚合函数
-
 2. 时间函数
-
 3. 数据清洗
 
 ### <span id = "view_procedure">视图、存储过程</span>
