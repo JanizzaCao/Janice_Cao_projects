@@ -21,6 +21,10 @@
     2. SQL练习
 4. [业务相关问题分析](senario_analysis)
 5. [机器学习（更新中）](Machine_learning)
+6. [IT技能](IT/README.md)
+    1. Python
+    2. 数据结构
+    3. 算法基础
 
 
 ### Update Record: 
