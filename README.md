@@ -73,7 +73,7 @@
     2. Juypter notebook: 
         1. [2019-Oct Python代码与简要分析](02_cosmetic_ecommerce/Cosmetic_Ecommerce_Shop_User_Events_Analysis.ipynb)  
         2. [月度数据预处理代码](02_cosmetic_ecommerce/comparison_prepare_1910.ipynb)  
-        3. [2019-Oct to 2020-Feb 月度经营状况比价分析](02_cosmetic_ecommerce/Monthly_Report.ipynb)  
+        3. [2019-Oct to 2020-Feb 月度经营状况比较分析](02_cosmetic_ecommerce/Monthly_Report.ipynb)  
 3. 数据来源:  
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
