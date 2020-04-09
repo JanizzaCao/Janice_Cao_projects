@@ -31,6 +31,7 @@
 
 |日期|内容|
 |:-:|:-|
+|2020.04.9|美妆电商分析增加2019/11至2020/02数据，采取按月预处理、导出数据，再整合分析的方法，更新相关代码至留存率分析部分|
 |2020.04.7|1. 业务分析问题点更新 <br> 2. SQL知识点内容增加 <br> 3. 增加分类算法步骤、优缺点总结表格，及分类算法整体架构|
 |2020.04.6|1. SQL题目更新 <br> 2. 美妆电商分析增加pyecharts制作漏斗图|
 |2020.04.2|美妆电商分析案例增加留存率分析部分、增加前半部分分析文字说明|
@@ -69,7 +70,10 @@
         2. 通过K-Means聚类算法优化用户分层模型的结果，通过散点图对聚类算法结果进行可视化
 2. 报告:  
     1. [分析报告](02_cosmetic_ecommerce/Ecommerce_events_history_in_cosmetics_shop.pdf)  
-    2. [Juypter notebook: Python代码与简要分析](02_cosmetic_ecommerce/Cosmetic_Ecommerce_Shop_User_Events_Analysis.ipynb)
+    2. Juypter notebook: 
+        1. [2019-Oct Python代码与简要分析](02_cosmetic_ecommerce/Cosmetic_Ecommerce_Shop_User_Events_Analysis.ipynb)  
+        2. [月度数据预处理代码](02_cosmetic_ecommerce/comparison_prepare_1910.ipynb)  
+        3. [2019-Oct to 2020-Feb 月度经营状况比价分析](02_cosmetic_ecommerce/Monthly_Report.ipynb)  
 3. 数据来源:  
     Dataset reference: https://www.kaggle.com/mkechinov/ecommerce-events-history-in-cosmetics-shop
 
