@@ -134,6 +134,28 @@
     GROUP BY user_id; --选出每个用户最大的连续签到日
     ```
     注：题目来源：https://mp.weixin.qq.com/s/dfzfC__vk4ESzOjOBJG3-w 原答案第一问似乎没有筛选掉当天未签到的用户；原答案第二问使用Oracel WM_CONCAT()函数，此处使用mySql变量解决
+    3. 灵活获取历史最大连续签到天数、或最近的连续签到天数  
+    表t: uid, date, is_flag；要求输出uid，flag_days
+    思路：增加一个递增数字列作为辅助列，若连续打卡，则打卡日期与递增数字列的差相同；且日期约近，差值越大；计算每个差出现过多少次；求历史最大则输出出现最多次的差，求最近连续则输出最大差的出现次数
+    ```
+    -- 求日期与辅助列的差值
+    CREATE VIEW difference AS (
+      SELECT uid, date, date_rank, (date_format(date, "%e")-date_rank) AS day_cha
+      FROM (SELECT uid, date, ROW_NUMBER() OVER(PARTITION BY uid ORDER BY date) AS date_rank
+            FROM t
+            WHERE is_flag=1) AS t1);
+    -- 求每个差值对应的天数，即连续签到天数
+    CREATE VIEW continue_days AS(
+      SELECT uid, day_cha, COUNT(date) flag_days FROM difference
+      GROUP BY uid, day_cha);
+    -- 求历史最大连续
+    SELECT uid, MAX(flag_days) FROM continue_days
+    GROUP BY uid;
+    -- 求目前连续天数
+    SELECT uid, MAX(day_cha), flag_days FROM continue_days
+    GROUP BY uid;
+    ```
+    注：方法参考https://mp.weixin.qq.com/s/yaEKXbziJAI_WY-2dlFPzw
 
 7. 表grade: sname学生名, score分数, cid科目, 求出所有科目都>80分的学生名
    ```
