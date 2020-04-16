@@ -10,11 +10,12 @@
 
 ### SQL语句
 
-1. [数据查询语言DQL](#sql_dql)
-2. [数据操作语言DML](#sql_dml)
-3. [数据定义语言DDL](#sql_ddl)
-4. [常用函数](0203general_query.md)
-5. [视图、存储过程](#view_procedure)
+1. [数据查询语言DQL](#sql_dql): SELECT
+2. [数据操作语言DML](#sql_dml): INSERT, UPDATE, DELETE
+3. [数据定义语言DDL](#sql_ddl): CREATE, DROP, ALTER  
+4. 数据控制功能: GRANT, REVOKE, COMMIT, ROLLBACK
+5. [常用函数](0203general_query.md)
+6. [视图、存储过程](#view_procedure)
 
 ## 1.2 高频知识点
 
@@ -46,7 +47,7 @@
 ---
 ---
 
-# 数据库基础
+# 1.1 数据库基础
 
 ## <span id = "db_basic">数据库基础概念</span>
 ### 数据库原理
@@ -198,7 +199,8 @@ FROM table|view
         ```
         2. 与ANY运算符：>ANY() 大于任何一个子查询则为True
         3. 与ALL运算符：>ALL() 大于子查询所有结果则为True
-        4. 与EXISTS, NOT EXISTS：代替IN提高速度
+        4. 与EXISTS, NOT EXISTS：  
+            与IN相比：IN将内外表HASH连接，EXISTS对外表loop循环；当查询的两个表大小相当时，IN与EXISTS差距不大；当子查询表大时EXISTS较优，当子查询表小时IN较优；但NOT EXISTS在任何情况下都比NOT IN快（因NOT IN内外表都全表扫描）
         ```
         -- 同IN例的查询目的：查2017年有购买的顾客
         SELECT name FROM customers AS c
@@ -212,16 +214,23 @@ FROM table|view
     ```
 5. 联结JOIN  
     1. 各种JOIN使用场景
-        1. INNER JOIN
-        2. LEFT JOIN
-        3. RIGHT JOIN
-        4. FULL OUTER JOIN
-        5. CROSS JOIN  
+        1. INNER JOIN：  
+            1. 等值连接：ON a.id = b.id
+            2. 不等值连接：ON a.id > b.id
+            3. 自连接: FROM t as t1 join t as t2 ON t1.id = t2.id
+        2. OUTER JOIN：
+            1. LEFT JOIN: 以左表为主，先查询出左表，按照ON后的关联条件匹配右表，没有匹配到的用NULL填充
+            2. RIGHT JOIN：以右表为主，先查询出右表，按照ON后的关联条件匹配左表，没有匹配到的用NULL填充
+            3. FULL OUTER JOIN: 可以用LEFT JOIN 和UNION和RIGHT JOIN联合使用替代
+            ```
+            SELECT * FROM A LEFT JOIN B ON A.id=B.id UNIONSELECT * FROM A RIGHT JOIN B ON A.id=B.id
+            ```
+        3. CROSS JOIN  
             <img src="pics/join.jfif" width="50%" align="middle">
     2. JOIN条件在ON和WHERE的区别
     3. LEFT JOIN配对条件的执行顺序
 6. 高级查询运算词: 含ALL为不消除结果的重复行
-    1. UNION, UNION ALL
+    1. UNION, UNION ALL：SELECT * FROM A UNION SELECT * FROM B UNION ...
     2. EXCEPT, EXCEPT ALL
     3. INTERSECT, INTERSECT ALL
 
@@ -245,6 +254,7 @@ FROM table|view
     1. 创建库：CREATE DATABASE db_name;
     2. 创建表：
     ```
+    -- SQL约束包括：NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK
     CREATE TABLE [IF NOT EXISTS] tb_name(
                   id INT IDENTITY(1,1) PRIMARY KEY,
                   name VARCHAR(10) UNIQUE NOT NULL,
@@ -312,9 +322,9 @@ FROM table|view
 
 ### <span id = "02dml_ddl_dcl">DML, DDL, DCL</span>
 1. Delete, truncate, drop区别
-    1. DROP table_a 不再需要该表时使用，删除表，DDL语言
+    1. DROP table_a 不再需要该表时使用，删除表（包括索引、权限），DDL语言，速度最快，
     2. DELETE: DML语言，慢，搭配where使用较灵活；  
-       TRUNCATE：DDL语句，快，可理解为先DROP再CREATE  
+       TRUNCATE：DDL语句，快，可理解为先DROP再CREATE，表结构保留  
        ||TRUNCATE|DELETE|
        |:-:|:-:|:-:|
        |回滚rollback|DDL语句，无回滚|DML语言，执行完可回滚|
