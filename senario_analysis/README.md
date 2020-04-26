@@ -12,9 +12,9 @@
 <hr>
 
 # 读书笔记
-<span id="book_note1">1. 《电商数据分析与数据化运营》</span>  
-    1. [第一章：建立电商运营的“上帝视角”](https://mp.weixin.qq.com/s?__biz=MzAwNTQxNzgzOA==&mid=2247483696&idx=1&sn=7b5a2b49e481e28cc054e2af9327c12a&chksm=9b1dbf31ac6a3627fdc24a58910f81e4f49cad4b61a000f2bce36b7a0bc98210ed11cde7a822&token=1887594848&lang=zh_CN#rd)  
-    2. [第二章：像“堆积木”一样认识数据指标](https://mp.weixin.qq.com/s?__biz=MzAwNTQxNzgzOA==&mid=2247483715&idx=1&sn=79453ff6e94d6f67788d886938e0d529&chksm=9b1dbf42ac6a36542ad35b95afa7fd732280a511043101bfb416ebe29cbc6e9bdb1423d5a4ca&token=1887594848&lang=zh_CN#rd)
+## <span id="book_note1">《电商数据分析与数据化运营》</span>  
+1. [第一章：建立电商运营的“上帝视角”](https://mp.weixin.qq.com/s?__biz=MzAwNTQxNzgzOA==&mid=2247483696&idx=1&sn=7b5a2b49e481e28cc054e2af9327c12a&chksm=9b1dbf31ac6a3627fdc24a58910f81e4f49cad4b61a000f2bce36b7a0bc98210ed11cde7a822&token=1887594848&lang=zh_CN#rd)  
+2. [第二章：像“堆积木”一样认识数据指标](https://mp.weixin.qq.com/s?__biz=MzAwNTQxNzgzOA==&mid=2247483715&idx=1&sn=79453ff6e94d6f67788d886938e0d529&chksm=9b1dbf42ac6a36542ad35b95afa7fd732280a511043101bfb416ebe29cbc6e9bdb1423d5a4ca&token=1887594848&lang=zh_CN#rd)
 
 # 业务分析相关知识点
 ## <span id="self">个人相关</span>
